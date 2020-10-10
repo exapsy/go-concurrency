@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+// The greedy worker uses the lock for the entirety of its "computations"
+// whereas the polite one uses the lock only when it needs to
 func main() {
 	var wg sync.WaitGroup
 	var sharedLock sync.Mutex
@@ -17,7 +19,7 @@ func main() {
 		var count int
 		for begin := time.Now(); time.Since(begin) <= runtime; {
 			sharedLock.Lock()
-			time.Sleep(5 * time.Nanosecond)
+			time.Sleep(3 * time.Nanosecond)
 			sharedLock.Unlock()
 			count++
 		}
