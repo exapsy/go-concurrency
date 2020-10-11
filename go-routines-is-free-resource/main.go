@@ -7,7 +7,7 @@ import (
 )
 
 // The point to prove is that go routines should be treated as a free resource
-// The amount of memory the consume, even when there are thousands of them, is minimal
+// The amount of memory they consume, even when there are thousands of them, is minimal
 func main() {
 	memConsumed := func() uint64 {
 		runtime.GC()
