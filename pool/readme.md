@@ -4,8 +4,9 @@ A pool is a cache of pre-assigned items. It's used to prevent assigning new vari
 
 ## How to benchmark
 
+## Test without pool
+
 ```
-# Test without pool
 cd ./without-pool
 go test -benchtime=10s -bench=.
 ```
@@ -22,7 +23,7 @@ ok      github.com/exapsy/go-concurrency/pool/without-pool      11.007s
 The result is
 **1e9 ns/op**
 
-# Test with pool
+## Test with pool
 
 ```
 cd ./with-pool
