@@ -23,6 +23,8 @@ The result is
 **1e9 ns/op**
 
 # Test with pool
+
+```
 cd ./with-pool
 go test -benchtime=10s -bench=.
 ```
